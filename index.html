@@ -787,15 +787,27 @@ document.querySelectorAll('.faq-q').forEach(btn => {
   });
 });
 
-// Hero form validation + submit (Google Forms経由 → info@web-day1.com に通知)
-// 隠しiframeにPOSTする方式: CORSの影響を受けず、サンドボックス環境でも動作
+// Hero form validation
 const heroForm = document.getElementById('heroForm');
-const GFORM_ENDPOINT = 'https://docs.google.com/forms/d/e/1FAIpQLSfGZr0BX-1pWWzPBFjFnyjpgxU0dSm7p7hrmn_1SOp6hWD6CQ/formResponse';
-const GFORM_FIELDS = {
-  company: 'entry.1276819412', // 会社名
-  name:    'entry.983514570',  // お名前
-  email:   'entry.566305507'   // メールアドレス
-};
+
+heroForm.addEventListener('submit', (e) => {
+  const errEl = document.getElementById('h-error');
+  errEl.classList.add('hidden');
+
+  const company = document.getElementById('h-company').value.trim();
+  const name    = document.getElementById('h-name').value.trim();
+  const email   = document.getElementById('h-email').value.trim();
+  const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+  if (!company || !name || !emailOk) {
+    e.preventDefault();
+    errEl.textContent = !company ? '会社名を入力してください' :
+                        !name    ? 'お名前を入力してください' :
+                                   '有効なメールアドレスを入力してください';
+    errEl.classList.remove('hidden');
+  }
+  // バリデーションOKならそのままFormSubmitへPOST送信
+});
 
 heroForm.addEventListener('submit', (e) => {
   e.preventDefault();
