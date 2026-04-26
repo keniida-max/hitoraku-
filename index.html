@@ -129,32 +129,30 @@
       </div>
 
       <!-- RIGHT: FORM -->
-      <div id="hero-form" class="bg-white text-slate-900 rounded-xl border-4 border-yellow-300 shadow-2xl overflow-hidden">
-        <div class="bg-alert-600 text-white text-center py-2.5 px-3">
-          <div class="font-black text-sm pulse-dot inline-block">残り<span class="text-yellow-300 text-lg">3枠</span>/今月限定</div>
-        </div>
-        <div class="p-5 lg:p-6">
-          <h2 class="text-center font-black text-xl lg:text-2xl text-brand-900 leading-tight">
-            月20時間削減の<br><span class="marker-y">無料診断</span>
-          </h2>
-          <p class="text-center text-xs text-slate-500 mt-2 font-bold">所要時間60秒 / 入力項目は3つだけ</p>
+      <form id="heroForm" class="mt-5 space-y-3"
+  action="https://formsubmit.co/info@web-day1.com"
+  method="POST">
 
-          <form id="heroForm" class="mt-5 space-y-3" novalidate>
-            <div>
-              <input id="h-company" name="company" type="text" placeholder="会社名 (必須)" required class="w-full h-12 px-4 border-2 border-slate-200 rounded-lg font-bold text-sm focus:outline-none focus:border-brand-600 focus:ring-2 focus:ring-brand-600/20">
-            </div>
-            <div>
-              <input id="h-name" name="name" type="text" placeholder="お名前 (必須)" required class="w-full h-12 px-4 border-2 border-slate-200 rounded-lg font-bold text-sm focus:outline-none focus:border-brand-600 focus:ring-2 focus:ring-brand-600/20">
-            </div>
-            <div>
-              <input id="h-email" name="email" type="email" placeholder="メールアドレス (必須)" required class="w-full h-12 px-4 border-2 border-slate-200 rounded-lg font-bold text-sm focus:outline-none focus:border-brand-600 focus:ring-2 focus:ring-brand-600/20">
-            </div>
-            <button type="submit" class="cta w-full bg-cta-500 hover:bg-cta-600 active:translate-y-0.5 text-white font-black text-base lg:text-lg py-4 rounded-lg shadow-cta hover:shadow-ctaHover transition-all">
-              今すぐ無料診断を申し込む <span class="cta-arrow">▶</span>
-            </button>
-            <div id="h-error" class="hidden text-alert-600 text-xs font-bold text-center"></div>
-          </form>
+  <!-- FormSubmit設定 -->
+  <input type="hidden" name="_subject" value="【ヒトラク】無料診断のお申し込みがありました">
+  <input type="hidden" name="_next" value="https://keniida-max.github.io/hitoraku-/?thanks=1">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="text" name="_honey" style="display:none">
 
+  <div>
+    <input id="h-company" name="company" type="text" placeholder="会社名 (必須)" required class="w-full h-12 px-4 border-2 border-slate-200 rounded-lg font-bold text-sm focus:outline-none focus:border-brand-600 focus:ring-2 focus:ring-brand-600/20">
+  </div>
+  <div>
+    <input id="h-name" name="name" type="text" placeholder="お名前 (必須)" required class="w-full h-12 px-4 border-2 border-slate-200 rounded-lg font-bold text-sm focus:outline-none focus:border-brand-600 focus:ring-2 focus:ring-brand-600/20">
+  </div>
+  <div>
+    <input id="h-email" name="email" type="email" placeholder="メールアドレス (必須)" required class="w-full h-12 px-4 border-2 border-slate-200 rounded-lg font-bold text-sm focus:outline-none focus:border-brand-600 focus:ring-2 focus:ring-brand-600/20">
+  </div>
+  <button type="submit" class="cta w-full bg-cta-500 hover:bg-cta-600 active:translate-y-0.5 text-white font-black text-base lg:text-lg py-4 rounded-lg shadow-cta hover:shadow-ctaHover transition-all">
+    今すぐ無料診断を申し込む <span class="cta-arrow">▶</span>
+  </button>
+  <div id="h-error" class="hidden text-alert-600 text-xs font-bold text-center"></div>
+</form>
           <div id="heroThanks" class="hidden text-center py-6">
             <div class="w-16 h-16 mx-auto bg-yellow-300 border-4 border-brand-900 rounded-full grid place-items-center text-2xl font-black text-brand-900 mb-3">✓</div>
             <h3 class="font-black text-lg">お申し込みありがとうございます</h3>
