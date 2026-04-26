@@ -1,1 +1,888 @@
-# hitoraku-
+
+# hitoraku-<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>【先着10社限定】AIエージェント作成サービス | 月20時間自動化 | 株式会社DAY1</title>
+<meta name="description" content="月20時間の業務を自動化。AIエージェントで生産性3倍。今なら初期費用30%OFF。先着10社限定。">
+<meta name="keywords" content="AIエージェント,業務自動化,AI導入,中小企業,DX,RPA,生産性向上,株式会社DAY1">
+<meta property="og:title" content="【先着10社限定】AIエージェント作成サービス | 株式会社DAY1">
+<meta property="og:description" content="月20時間の業務を自動化。専任担当者が伴走。最短1ヶ月で稼働。">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ja_JP">
+<!-- Tailwind via CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<!-- Google Analytics placeholder
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+-->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "AIワークフロー構築サービス",
+  "provider": {"@type":"Organization","name":"株式会社DAY1","email":"info@web-day1.com"},
+  "description":"中小企業向けAIエージェント作成サービス。月20〜40時間の業務時間削減を実現。専任担当者伴走、最短1ヶ月で稼働。",
+  "areaServed":"JP"
+}
+</script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          brand: { 50:'#eff6ff', 600:'#2563eb', 700:'#1d4ed8', 900:'#0e2244' },
+          cta:   { 400:'#fbbf24', 500:'#f59e0b', 600:'#d97706', 700:'#b45309' },
+          alert: { 500:'#ef4444', 600:'#dc2626' },
+        },
+        fontFamily: { sans: ['"Noto Sans JP"','system-ui','sans-serif'] },
+        boxShadow: {
+          cta:'0 6px 0 #b45309, 0 12px 28px rgba(245,158,11,.35)',
+          ctaHover:'0 3px 0 #b45309, 0 6px 14px rgba(245,158,11,.4)',
+        }
+      }
+    }
+  }
+</script>
+<style>
+  body{font-family:'Noto Sans JP',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  .marker-y{background:linear-gradient(transparent 60%,#fde047 60%);padding:0 4px}
+  .marker-r{background:linear-gradient(transparent 65%,#ef4444 65%,#ef4444 80%,transparent 80%);padding:0 4px}
+  .stripe-yellow{background:repeating-linear-gradient(45deg,#0e2244 0 12px,#fde047 12px 24px)}
+  .pattern-stripe{background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.05) 0 8px,transparent 8px 16px)}
+  .fade-in-init{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+  .fade-in{opacity:1!important;transform:none!important}
+  .pulse-dot{position:relative}
+  .pulse-dot::before{content:"";position:absolute;left:-14px;top:50%;width:8px;height:8px;background:#ef4444;border-radius:50%;transform:translateY(-50%);box-shadow:0 0 0 0 rgba(239,68,68,.7);animation:pulse 1.6s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(239,68,68,.7)}70%{box-shadow:0 0 0 10px rgba(239,68,68,0)}100%{box-shadow:0 0 0 0 rgba(239,68,68,0)}}
+  .scarcity-bar{background:#dc2626;color:#fff}
+  .scarcity-bar b{color:#fde047}
+  .cta-arrow{display:inline-block;transition:transform .15s}
+  .cta:hover .cta-arrow{transform:translateX(4px)}
+  ::selection{background:#fde047;color:#0e2244}
+</style>
+</head>
+<body class="bg-white text-slate-900">
+
+<!-- ============ TOP SCARCITY BAR ============ -->
+<div class="scarcity-bar text-center text-xs sm:text-sm font-bold py-2 px-3">
+  <span class="inline-flex items-center gap-2"><span class="inline-block w-2 h-2 bg-yellow-300 rounded-full animate-pulse"></span>【先着10社限定キャンペーン】初期費用<b>30%OFF</b>・残り<b>3社</b>(2026年4月現在)</span>
+</div>
+
+<!-- ============ TOP NAV ============ -->
+<header class="sticky top-0 z-50 bg-white border-b border-slate-200">
+  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+    <a href="#" class="flex items-center gap-2.5">
+      <span class="w-9 h-9 bg-brand-900 text-white grid place-items-center font-black text-sm rounded">D1</span>
+      <span class="font-black text-sm leading-tight">株式会社DAY1<span class="block text-[10px] text-slate-500 font-medium">AI Workflow Service</span></span>
+    </a>
+    <nav class="hidden md:flex gap-6 text-sm font-bold text-slate-700">
+      <a href="#problems" class="hover:text-brand-600">課題</a>
+      <a href="#menu" class="hover:text-brand-600">サービス</a>
+      <a href="#cases" class="hover:text-brand-600">導入事例</a>
+      <a href="#pricing" class="hover:text-brand-600">料金</a>
+      <a href="#guarantee" class="hover:text-brand-600">保証</a>
+      <a href="#faq" class="hover:text-brand-600">FAQ</a>
+    </nav>
+    <a href="#hero-form" class="bg-cta-500 hover:bg-cta-600 text-white font-black text-sm px-4 py-2.5 rounded shadow-md transition-colors">無料診断 ▶</a>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="relative bg-brand-900 text-white pattern-stripe overflow-hidden">
+  <div class="max-w-6xl mx-auto px-4 py-10 lg:py-14">
+    <div class="grid lg:grid-cols-[1.2fr_1fr] gap-8 lg:gap-10 items-start">
+      <!-- LEFT: COPY -->
+      <div>
+        <div class="inline-flex items-center gap-2 bg-yellow-300 text-brand-900 font-black text-xs px-3 py-1.5 rounded-full">
+          <span class="bg-alert-500 text-white text-[10px] px-2 py-0.5 rounded">FOR SMB</span>
+          従業員10〜100名の経営者・事業責任者へ
+        </div>
+        <h1 class="mt-5 font-black text-3xl sm:text-4xl lg:text-[44px] leading-[2.0] lg:leading-[1.9] text-white text-balance" style="word-break:keep-all;line-break:strict;">
+          月<span class="text-yellow-300 italic text-[1.25em]">20</span>時間の<span style="display:inline-block">業務</span>を自動化。<br>
+          <span class="marker-y text-white">ヒトラク</span>で、<br class="lg:hidden">御社の生産性を<span class="text-yellow-300">3倍</span>に。
+        </h1>
+        <p class="mt-5 text-slate-300 text-base lg:text-lg leading-relaxed font-medium">
+          問い合わせ対応・見積書作成・営業日報 → <span class="text-yellow-300 font-bold">全て自動化できます</span>
+        </p>
+
+        <ul class="mt-6 space-y-2 text-sm lg:text-base font-bold">
+          <li class="flex items-center gap-2"><span class="text-yellow-300">✓</span>導入実績:<span class="text-yellow-300">3社</span>(2026年4月〜)</li>
+          <li class="flex items-center gap-2"><span class="text-yellow-300">✓</span>平均削減時間:<span class="text-yellow-300">月38時間</span></li>
+          <li class="flex items-center gap-2"><span class="text-yellow-300">✓</span>投資回収期間:<span class="text-yellow-300">平均6ヶ月</span></li>
+        </ul>
+
+        <div class="mt-6 flex flex-wrap gap-2">
+          <span class="bg-white/10 border border-white/20 px-3 py-1.5 rounded text-xs font-bold">専任担当が伴走</span>
+          <span class="bg-white/10 border border-white/20 px-3 py-1.5 rounded text-xs font-bold">最短1ヶ月で稼働</span>
+          <span class="bg-white/10 border border-white/20 px-3 py-1.5 rounded text-xs font-bold">業界実績多数</span>
+        </div>
+      </div>
+
+      <!-- RIGHT: FORM -->
+      <div id="hero-form" class="bg-white text-slate-900 rounded-xl border-4 border-yellow-300 shadow-2xl overflow-hidden">
+        <div class="bg-alert-600 text-white text-center py-2.5 px-3">
+          <div class="font-black text-sm pulse-dot inline-block">残り<span class="text-yellow-300 text-lg">3枠</span>/今月限定</div>
+        </div>
+        <div class="p-5 lg:p-6">
+          <h2 class="text-center font-black text-xl lg:text-2xl text-brand-900 leading-tight">
+            月20時間削減の<br><span class="marker-y">無料診断</span>
+          </h2>
+          <p class="text-center text-xs text-slate-500 mt-2 font-bold">所要時間60秒 / 入力項目は3つだけ</p>
+
+          <form id="heroForm" class="mt-5 space-y-3" novalidate>
+            <div>
+              <input id="h-company" name="company" type="text" placeholder="会社名 (必須)" required class="w-full h-12 px-4 border-2 border-slate-200 rounded-lg font-bold text-sm focus:outline-none focus:border-brand-600 focus:ring-2 focus:ring-brand-600/20">
+            </div>
+            <div>
+              <input id="h-name" name="name" type="text" placeholder="お名前 (必須)" required class="w-full h-12 px-4 border-2 border-slate-200 rounded-lg font-bold text-sm focus:outline-none focus:border-brand-600 focus:ring-2 focus:ring-brand-600/20">
+            </div>
+            <div>
+              <input id="h-email" name="email" type="email" placeholder="メールアドレス (必須)" required class="w-full h-12 px-4 border-2 border-slate-200 rounded-lg font-bold text-sm focus:outline-none focus:border-brand-600 focus:ring-2 focus:ring-brand-600/20">
+            </div>
+            <button type="submit" class="cta w-full bg-cta-500 hover:bg-cta-600 active:translate-y-0.5 text-white font-black text-base lg:text-lg py-4 rounded-lg shadow-cta hover:shadow-ctaHover transition-all">
+              今すぐ無料診断を申し込む <span class="cta-arrow">▶</span>
+            </button>
+            <div id="h-error" class="hidden text-alert-600 text-xs font-bold text-center"></div>
+          </form>
+
+          <div id="heroThanks" class="hidden text-center py-6">
+            <div class="w-16 h-16 mx-auto bg-yellow-300 border-4 border-brand-900 rounded-full grid place-items-center text-2xl font-black text-brand-900 mb-3">✓</div>
+            <h3 class="font-black text-lg">お申し込みありがとうございます</h3>
+            <p class="text-xs text-slate-600 mt-2 font-bold leading-relaxed">お申し込みを受け付けました。<br>3営業日以内に担当よりご連絡いたします。<br><span class="text-slate-500 font-medium">※連絡が無い場合は info@web-day1.com までご連絡ください。</span></p>
+          </div>
+
+          <div class="mt-4 pt-4 border-t border-slate-100 text-[11px] text-slate-500 font-bold leading-relaxed text-center">
+            ※所要時間1時間 / Zoom対応可<br>
+            ※<span class="text-alert-600 font-black">しつこい営業は一切ありません</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 1: PROBLEMS ============ -->
+<section id="problems" class="py-16 lg:py-20 bg-yellow-300 relative">
+  <div class="stripe-yellow h-2 absolute top-0 inset-x-0"></div>
+  <div class="stripe-yellow h-2 absolute bottom-0 inset-x-0"></div>
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="text-center fade-in-init">
+      <h2 class="font-black text-2xl sm:text-3xl lg:text-4xl text-brand-900 leading-tight">こんなお悩み、<span class="marker-r text-white">ありませんか?</span></h2>
+      <p class="mt-3 font-bold text-sm text-slate-800">中小企業の経営者・事業責任者の方から、特に多いご相談です</p>
+    </div>
+
+    <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="fade-in-init bg-white rounded-xl p-6 border-2 border-brand-900">
+        <div class="w-14 h-14 bg-alert-500 text-white grid place-items-center rounded-lg font-black text-xl">📨</div>
+        <h3 class="mt-4 font-black text-lg text-brand-900">問い合わせ対応</h3>
+        <p class="mt-2 text-sm text-slate-700 font-medium leading-relaxed">毎日の問い合わせ対応に追われている。同じ質問への返信、土日夜間の見落とし。</p>
+        <div class="mt-4 pt-4 border-t-2 border-dashed border-slate-200">
+          <div class="text-[11px] text-slate-500 font-black tracking-wider">CURRENT COST</div>
+          <div class="font-black text-2xl text-alert-600 italic mt-1">月50件の対応<span class="text-base text-brand-900">≒ 月50時間</span></div>
+        </div>
+      </div>
+
+      <div class="fade-in-init bg-white rounded-xl p-6 border-2 border-brand-900">
+        <div class="w-14 h-14 bg-alert-500 text-white grid place-items-center rounded-lg font-black text-xl">🧾</div>
+        <h3 class="mt-4 font-black text-lg text-brand-900">見積書・請求書作成</h3>
+        <p class="mt-2 text-sm text-slate-700 font-medium leading-relaxed">見積書・請求書の作成に何十時間も。手入力ミス、freee転記、月末残業。</p>
+        <div class="mt-4 pt-4 border-t-2 border-dashed border-slate-200">
+          <div class="text-[11px] text-slate-500 font-black tracking-wider">CURRENT COST</div>
+          <div class="font-black text-2xl text-alert-600 italic mt-1">月40時間<span class="text-base text-brand-900">= 月15万円相当</span></div>
+        </div>
+      </div>
+
+      <div class="fade-in-init bg-white rounded-xl p-6 border-2 border-brand-900">
+        <div class="w-14 h-14 bg-alert-500 text-white grid place-items-center rounded-lg font-black text-xl">📝</div>
+        <h3 class="mt-4 font-black text-lg text-brand-900">営業日報</h3>
+        <p class="mt-2 text-sm text-slate-700 font-medium leading-relaxed">営業メンバーが日報作成に時間を取られている。「報告のための報告」状態。</p>
+        <div class="mt-4 pt-4 border-t-2 border-dashed border-slate-200">
+          <div class="text-[11px] text-slate-500 font-black tracking-wider">CURRENT COST</div>
+          <div class="font-black text-2xl text-alert-600 italic mt-1">1人30分×5名<span class="text-base text-brand-900">= 月25時間</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-10 text-center">
+      <p class="font-black text-xl lg:text-2xl text-brand-900">→ その悩み、<span class="marker-r text-white">AIで解決できます</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 2: MENU ============ -->
+<section id="menu" class="py-16 lg:py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="text-center fade-in-init">
+      <span class="inline-block text-alert-600 font-black text-xs tracking-[.16em]">SERVICE MENU</span>
+      <h2 class="mt-2 font-black text-2xl sm:text-3xl lg:text-4xl text-brand-900 leading-tight">AIで自動化できる<br><span class="marker-y">3つの業務</span>。</h2>
+    </div>
+
+    <div class="mt-12 grid lg:grid-cols-3 gap-5">
+      <!-- MENU 1 -->
+      <article class="fade-in-init flex flex-col rounded-xl overflow-hidden border-2 border-brand-900 bg-white">
+        <div class="bg-alert-500 text-white p-5">
+          <div class="flex items-baseline gap-2">
+            <div class="text-yellow-300 font-black italic text-4xl leading-none">01</div>
+            <div class="text-xs font-bold tracking-widest opacity-90">MENU</div>
+          </div>
+          <h3 class="mt-2 font-black text-lg leading-snug">顧客問い合わせ<br>自動返信システム</h3>
+        </div>
+        <div class="p-5 flex flex-col gap-4">
+          <div>
+            <div class="text-xs font-black text-brand-900 mb-2">こんな課題を解決</div>
+            <ul class="space-y-1.5 text-sm font-bold text-slate-700">
+              <li class="flex gap-2"><span class="text-alert-500">✓</span>同じ質問に何度も答えるのが面倒</li>
+              <li class="flex gap-2"><span class="text-alert-500">✓</span>土日・夜間の問い合わせに対応できない</li>
+              <li class="flex gap-2"><span class="text-alert-500">✓</span>対応で時間が奪われる</li>
+            </ul>
+          </div>
+          <div class="bg-yellow-50 border-2 border-yellow-300 rounded-lg p-4">
+            <div class="text-[11px] font-black text-brand-900 tracking-wider">導入効果</div>
+            <div class="mt-1 font-black text-brand-900 text-lg">月50時間 → <span class="text-alert-600 italic">15時間</span> <span class="text-sm">(70%削減)</span></div>
+            <div class="mt-1 text-xs font-bold text-slate-700">= 年間420時間削減 / 人件費年間168万円削減</div>
+          </div>
+          <div class="border-2 border-brand-900 rounded-lg p-3 grid grid-cols-2 gap-2 text-sm">
+            <div><div class="text-[10px] text-slate-500 font-black">初期費用</div><div class="font-black text-brand-900">¥500,000</div></div>
+            <div><div class="text-[10px] text-slate-500 font-black">月額</div><div class="font-black text-brand-900">¥100,000</div></div>
+            <div class="col-span-2 pt-2 border-t border-slate-200"><div class="text-[10px] text-slate-500 font-black">投資回収期間</div><div class="font-black text-alert-600 text-base">6ヶ月</div></div>
+          </div>
+          <div class="text-[11px] font-bold text-slate-600 leading-relaxed">対象:EC事業者 / 士業 / 不動産 / サービス業</div>
+        </div>
+      </article>
+
+      <!-- MENU 2 -->
+      <article class="fade-in-init flex flex-col rounded-xl overflow-hidden border-4 border-cta-500 bg-white relative shadow-xl lg:-mt-3">
+        <div class="absolute top-3 right-3 bg-cta-500 text-white text-[10px] font-black px-2.5 py-1 rounded">★ おすすめ</div>
+        <div class="bg-brand-900 text-white p-5">
+          <div class="flex items-baseline gap-2">
+            <div class="text-yellow-300 font-black italic text-4xl leading-none">02</div>
+            <div class="text-xs font-bold tracking-widest opacity-90">MENU</div>
+          </div>
+          <h3 class="mt-2 font-black text-lg leading-snug">見積書・請求書<br>自動作成システム</h3>
+        </div>
+        <div class="p-5 flex flex-col gap-4">
+          <div>
+            <div class="text-xs font-black text-brand-900 mb-2">こんな課題を解決</div>
+            <ul class="space-y-1.5 text-sm font-bold text-slate-700">
+              <li class="flex gap-2"><span class="text-alert-500">✓</span>毎月何十時間も使っている</li>
+              <li class="flex gap-2"><span class="text-alert-500">✓</span>手入力による転記ミスが多発</li>
+              <li class="flex gap-2"><span class="text-alert-500">✓</span>freeeへの入力が面倒</li>
+            </ul>
+          </div>
+          <div class="bg-yellow-50 border-2 border-yellow-300 rounded-lg p-4">
+            <div class="text-[11px] font-black text-brand-900 tracking-wider">導入効果</div>
+            <div class="mt-1 font-black text-brand-900 text-lg">月40時間 → <span class="text-alert-600 italic">5時間</span> <span class="text-sm">(87%削減)</span></div>
+            <div class="mt-1 text-xs font-bold text-slate-700">= 年間420時間削減 / 人件費年間210万円削減</div>
+          </div>
+          <div class="border-2 border-brand-900 rounded-lg p-3 grid grid-cols-2 gap-2 text-sm">
+            <div><div class="text-[10px] text-slate-500 font-black">初期費用</div><div class="font-black text-brand-900">¥600,000</div></div>
+            <div><div class="text-[10px] text-slate-500 font-black">月額</div><div class="font-black text-brand-900">¥120,000</div></div>
+            <div class="col-span-2 pt-2 border-t border-slate-200"><div class="text-[10px] text-slate-500 font-black">投資回収期間</div><div class="font-black text-alert-600 text-base">5ヶ月</div></div>
+          </div>
+          <div class="text-[11px] font-bold text-slate-600 leading-relaxed">対象:製造業 / 建設業 / 卸売業 / システム開発</div>
+        </div>
+      </article>
+
+      <!-- MENU 3 -->
+      <article class="fade-in-init flex flex-col rounded-xl overflow-hidden border-2 border-brand-900 bg-white">
+        <div class="bg-brand-700 text-white p-5">
+          <div class="flex items-baseline gap-2">
+            <div class="text-yellow-300 font-black italic text-4xl leading-none">03</div>
+            <div class="text-xs font-bold tracking-widest opacity-90">MENU</div>
+          </div>
+          <h3 class="mt-2 font-black text-lg leading-snug">営業日報・週報<br>自動生成システム</h3>
+        </div>
+        <div class="p-5 flex flex-col gap-4">
+          <div>
+            <div class="text-xs font-black text-brand-900 mb-2">こんな課題を解決</div>
+            <ul class="space-y-1.5 text-sm font-bold text-slate-700">
+              <li class="flex gap-2"><span class="text-alert-500">✓</span>営業が日報作成に時間を取られる</li>
+              <li class="flex gap-2"><span class="text-alert-500">✓</span>「報告のための報告」状態</li>
+              <li class="flex gap-2"><span class="text-alert-500">✓</span>営業活動が可視化できない</li>
+            </ul>
+          </div>
+          <div class="bg-yellow-50 border-2 border-yellow-300 rounded-lg p-4">
+            <div class="text-[11px] font-black text-brand-900 tracking-wider">導入効果</div>
+            <div class="mt-1 font-black text-brand-900 text-lg">30分 → <span class="text-alert-600 italic">5分</span> <span class="text-sm">(83%削減)</span></div>
+            <div class="mt-1 text-xs font-bold text-slate-700">= 5名チームで月25時間 / 年120万円削減</div>
+          </div>
+          <div class="border-2 border-brand-900 rounded-lg p-3 grid grid-cols-2 gap-2 text-sm">
+            <div><div class="text-[10px] text-slate-500 font-black">初期費用</div><div class="font-black text-brand-900">¥500,000</div></div>
+            <div><div class="text-[10px] text-slate-500 font-black">月額(3名まで)</div><div class="font-black text-brand-900">¥100,000</div></div>
+            <div class="col-span-2 pt-2 border-t border-slate-200"><div class="text-[10px] text-slate-500 font-black">投資回収期間</div><div class="font-black text-alert-600 text-base">7ヶ月</div></div>
+          </div>
+          <div class="text-[11px] font-bold text-slate-600 leading-relaxed">対象:不動産営業 / 保険営業 / BtoB営業 / SaaS</div>
+        </div>
+      </article>
+    </div>
+
+    <!-- CTA #2 -->
+    <div class="mt-12 text-center">
+      <a href="#hero-form" class="cta inline-flex items-center gap-3 bg-cta-500 hover:bg-cta-600 active:translate-y-0.5 text-white font-black text-lg lg:text-xl px-8 lg:px-10 py-5 rounded-lg shadow-cta hover:shadow-ctaHover transition-all">
+        今すぐ無料診断を申し込む <span class="cta-arrow">▶</span>
+      </a>
+      <p class="mt-3 text-xs font-bold text-slate-500">所要時間1時間 / しつこい営業なし / 残り3枠</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 3: CASES ============ -->
+<section id="cases" class="py-16 lg:py-24 bg-slate-50">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="text-center fade-in-init">
+      <span class="inline-block text-alert-600 font-black text-xs tracking-[.16em]">CASE STUDIES</span>
+      <h2 class="mt-2 font-black text-2xl sm:text-3xl lg:text-4xl text-brand-900 leading-tight">導入企業様の<span class="marker-y">声</span>。</h2>
+    </div>
+
+    <div class="mt-12 grid lg:grid-cols-3 gap-5">
+      <!-- CASE 1 -->
+      <article class="fade-in-init bg-white rounded-xl border-2 border-slate-200 overflow-hidden flex flex-col">
+        <div class="aspect-[5/3] bg-slate-200 bg-cover bg-center" style="background-image:url('images/case1-tanaka.jpeg')" aria-label="不動産業 田中様"></div>
+        <div class="p-5 flex flex-col gap-3 flex-1">
+          <div class="bg-yellow-100 border-l-4 border-cta-500 p-3 rounded">
+            <p class="font-black text-brand-900 text-sm leading-relaxed">「土日の問い合わせ対応がゼロに。家族との時間が月8時間増えました」</p>
+          </div>
+          <div class="text-xs font-bold text-slate-700 leading-relaxed">
+            <div><span class="text-slate-500">業種:</span>不動産業 (代表取締役 田中様 / 仮名)</div>
+            <div><span class="text-slate-500">従業員:</span>5名</div>
+            <div><span class="text-slate-500">導入:</span>問い合わせ自動返信</div>
+          </div>
+          <div class="mt-auto pt-3 border-t border-slate-200 space-y-1 text-xs font-bold text-slate-700">
+            <div class="flex gap-2"><span class="text-alert-500">▶</span>問い合わせ対応時間 <b class="text-alert-600">70%削減</b></div>
+            <div class="flex gap-2"><span class="text-alert-500">▶</span>成約率 <b class="text-alert-600">15%向上</b>(即レス効果)</div>
+            <div class="flex gap-2"><span class="text-alert-500">▶</span>残業 <b class="text-alert-600">月10時間減</b></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- CASE 2 -->
+      <article class="fade-in-init bg-white rounded-xl border-2 border-slate-200 overflow-hidden flex flex-col">
+        <div class="aspect-[5/3] bg-slate-200 bg-cover bg-center" style="background-image:url('images/case2-sato.jpeg')" aria-label="製造業 佐藤様"></div>
+        <div class="p-5 flex flex-col gap-3 flex-1">
+          <div class="bg-yellow-100 border-l-4 border-cta-500 p-3 rounded">
+            <p class="font-black text-brand-900 text-sm leading-relaxed">「転記ミスがゼロになり、月末の残業がなくなりました」</p>
+          </div>
+          <div class="text-xs font-bold text-slate-700 leading-relaxed">
+            <div><span class="text-slate-500">業種:</span>製造業 (経理部長 佐藤様 / 仮名)</div>
+            <div><span class="text-slate-500">従業員:</span>30名</div>
+            <div><span class="text-slate-500">導入:</span>見積書・請求書自動作成</div>
+          </div>
+          <div class="mt-auto pt-3 border-t border-slate-200 space-y-1 text-xs font-bold text-slate-700">
+            <div class="flex gap-2"><span class="text-alert-500">▶</span>経理業務 <b class="text-alert-600">87%削減</b></div>
+            <div class="flex gap-2"><span class="text-alert-500">▶</span>転記ミスによるクレーム <b class="text-alert-600">ゼロ</b></div>
+            <div class="flex gap-2"><span class="text-alert-500">▶</span>残業代 <b class="text-alert-600">月8万円削減</b></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- CASE 3 -->
+      <article class="fade-in-init bg-white rounded-xl border-2 border-slate-200 overflow-hidden flex flex-col">
+        <div class="aspect-[5/3] bg-slate-200 bg-cover bg-center" style="background-image:url('images/case3-suzuki.png')" aria-label="コンサル業 鈴木様"></div>
+        <div class="p-5 flex flex-col gap-3 flex-1">
+          <div class="bg-yellow-100 border-l-4 border-cta-500 p-3 rounded">
+            <p class="font-black text-brand-900 text-sm leading-relaxed">「営業が本来の仕事に集中できるようになり、売上が120%になりました」</p>
+          </div>
+          <div class="text-xs font-bold text-slate-700 leading-relaxed">
+            <div><span class="text-slate-500">業種:</span>コンサル業 (営業部長 鈴木様 / 仮名)</div>
+            <div><span class="text-slate-500">従業員:</span>15名 (営業5名)</div>
+            <div><span class="text-slate-500">導入:</span>営業日報自動生成</div>
+          </div>
+          <div class="mt-auto pt-3 border-t border-slate-200 space-y-1 text-xs font-bold text-slate-700">
+            <div class="flex gap-2"><span class="text-alert-500">▶</span>日報作成 <b class="text-alert-600">月25時間削減</b></div>
+            <div class="flex gap-2"><span class="text-alert-500">▶</span>営業活動の可視化で戦略明確化</div>
+            <div class="flex gap-2"><span class="text-alert-500">▶</span>売上 <b class="text-alert-600">前年比120%</b></div>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- CTA #3 -->
+    <div class="mt-12 text-center">
+      <a href="#hero-form" class="cta inline-flex items-center gap-3 bg-cta-500 hover:bg-cta-600 active:translate-y-0.5 text-white font-black text-lg lg:text-xl px-8 lg:px-10 py-5 rounded-lg shadow-cta hover:shadow-ctaHover transition-all">
+        今すぐ無料診断を申し込む <span class="cta-arrow">▶</span>
+      </a>
+      <p class="mt-3 text-xs font-bold text-slate-500">あなたの会社も導入事例の仲間入り</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 4: PRICING ============ -->
+<section id="pricing" class="py-16 lg:py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="text-center fade-in-init">
+      <span class="inline-block text-alert-600 font-black text-xs tracking-[.16em]">PRICING</span>
+      <h2 class="mt-2 font-black text-2xl sm:text-3xl lg:text-4xl text-brand-900 leading-tight">料金プラン<br><span class="marker-y">まずは1つから</span>始められます。</h2>
+      <p class="mt-3 font-bold text-sm text-alert-600">※複数導入で初期費用20%OFF</p>
+    </div>
+
+    <div class="mt-12 grid lg:grid-cols-3 gap-5">
+      <div class="fade-in-init bg-white rounded-xl border-2 border-slate-300 p-6 flex flex-col">
+        <div class="text-xs font-black text-slate-500 tracking-wider">PLAN 01</div>
+        <h3 class="mt-1 font-black text-lg text-brand-900">問い合わせ自動返信</h3>
+        <div class="mt-4 pb-4 border-b-2 border-dashed border-slate-200">
+          <div class="font-black text-brand-900"><span class="text-xs">初期</span> <span class="text-2xl">¥500,000</span></div>
+          <div class="font-black text-brand-900"><span class="text-xs">月額</span> <span class="text-2xl">¥50,000</span></div>
+        </div>
+        <dl class="mt-4 space-y-2.5 text-sm font-bold flex-1">
+          <div class="flex justify-between"><dt class="text-slate-600">削減効果</dt><dd class="text-brand-900">月8時間 / 年96時間</dd></div>
+          <div class="flex justify-between"><dt class="text-slate-600">人件費削減</dt><dd class="text-alert-600">年168万円</dd></div>
+          <div class="flex justify-between"><dt class="text-slate-600">投資回収</dt><dd class="text-alert-600">6ヶ月</dd></div>
+        </dl>
+      </div>
+
+      <div class="fade-in-init bg-white rounded-xl border-4 border-cta-500 p-6 flex flex-col relative shadow-xl lg:-mt-3">
+        <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-cta-500 text-white text-xs font-black px-4 py-1 rounded-full">★ おすすめ</div>
+        <div class="text-xs font-black text-cta-600 tracking-wider">PLAN 02</div>
+        <h3 class="mt-1 font-black text-lg text-brand-900">見積書・請求書自動作成</h3>
+        <div class="mt-4 pb-4 border-b-2 border-dashed border-cta-200">
+          <div class="font-black text-brand-900"><span class="text-xs">初期</span> <span class="text-2xl">¥600,000</span></div>
+          <div class="font-black text-brand-900"><span class="text-xs">月額</span> <span class="text-2xl">¥50,000</span></div>
+        </div>
+        <dl class="mt-4 space-y-2.5 text-sm font-bold flex-1">
+          <div class="flex justify-between"><dt class="text-slate-600">削減効果</dt><dd class="text-brand-900">月20時間 / 年240時間</dd></div>
+          <div class="flex justify-between"><dt class="text-slate-600">人件費削減</dt><dd class="text-alert-600">年210万円</dd></div>
+          <div class="flex justify-between"><dt class="text-slate-600">投資回収</dt><dd class="text-alert-600">5ヶ月</dd></div>
+        </dl>
+      </div>
+
+      <div class="fade-in-init bg-white rounded-xl border-2 border-slate-300 p-6 flex flex-col">
+        <div class="text-xs font-black text-slate-500 tracking-wider">PLAN 03</div>
+        <h3 class="mt-1 font-black text-lg text-brand-900">営業日報自動生成</h3>
+        <div class="mt-4 pb-4 border-b-2 border-dashed border-slate-200">
+          <div class="font-black text-brand-900"><span class="text-xs">初期</span> <span class="text-2xl">¥500,000</span></div>
+          <div class="font-black text-brand-900"><span class="text-xs">月額</span> <span class="text-2xl">¥50,000</span></div>
+        </div>
+        <dl class="mt-4 space-y-2.5 text-sm font-bold flex-1">
+          <div class="flex justify-between"><dt class="text-slate-600">削減効果</dt><dd class="text-brand-900">月10時間 / 年120時間</dd></div>
+          <div class="flex justify-between"><dt class="text-slate-600">人件費削減</dt><dd class="text-alert-600">年120万円</dd></div>
+          <div class="flex justify-between"><dt class="text-slate-600">投資回収</dt><dd class="text-alert-600">7ヶ月</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="mt-8 max-w-3xl mx-auto text-xs font-bold text-slate-600 bg-slate-50 border border-slate-200 rounded-lg p-4 leading-relaxed">
+      ※最低契約期間:6ヶ月 / ※7ヶ月目以降は1ヶ月前通知で解約可能 / ※導入サポート費用込み(通常20万円)
+    </div>
+
+    <!-- CTA #4 -->
+    <div class="mt-10 text-center">
+      <a href="#hero-form" class="cta inline-flex items-center gap-3 bg-cta-500 hover:bg-cta-600 active:translate-y-0.5 text-white font-black text-lg lg:text-xl px-8 lg:px-10 py-5 rounded-lg shadow-cta hover:shadow-ctaHover transition-all">
+        今すぐ無料診断を申し込む <span class="cta-arrow">▶</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 5: GUARANTEE ============ -->
+<section id="guarantee" class="py-16 lg:py-24 bg-brand-900 text-white pattern-stripe relative">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="text-center fade-in-init">
+      <span class="inline-block bg-yellow-300 text-brand-900 font-black text-xs px-3 py-1.5 rounded tracking-wider">RISK ZERO</span>
+      <h2 class="mt-3 font-black text-2xl sm:text-3xl lg:text-4xl leading-tight">初めてでも安心。<br><span class="text-yellow-300">リスクゼロ</span>で始められます。</h2>
+    </div>
+
+    <div class="mt-12 grid sm:grid-cols-1 lg:grid-cols-1 max-w-2xl mx-auto gap-5">
+      <div class="fade-in-init bg-white text-slate-900 rounded-xl p-6 border-4 border-yellow-300">
+        <div class="w-16 h-16 bg-brand-700 text-white grid place-items-center rounded-full font-black text-2xl">★</div>
+        <h3 class="mt-4 font-black text-lg text-brand-900">専任担当者伴走サポート</h3>
+        <p class="mt-3 text-sm font-bold text-slate-700 leading-relaxed">設定・運用まで完全サポート。ITに詳しくなくても安心して導入できます。平日日中は専任担当が、チャット・電話でいつでもサポート。</p>
+      </div>
+    </div>
+
+    <!-- CTA #5 -->
+    <div class="mt-12 text-center">
+      <a href="#hero-form" class="cta inline-flex items-center gap-3 bg-cta-500 hover:bg-cta-600 active:translate-y-0.5 text-white font-black text-lg lg:text-xl px-8 lg:px-10 py-5 rounded-lg shadow-cta hover:shadow-ctaHover transition-all">
+        今すぐ無料診断を申し込む <span class="cta-arrow">▶</span>
+      </a>
+      <p class="mt-3 text-xs font-bold text-slate-300">リスクゼロで始められます</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 6: FLOW ============ -->
+<section class="py-16 lg:py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="text-center fade-in-init">
+      <span class="inline-block text-alert-600 font-black text-xs tracking-[.16em]">IMPLEMENTATION FLOW</span>
+      <h2 class="mt-2 font-black text-2xl sm:text-3xl lg:text-4xl text-brand-900 leading-tight">導入までの流れ<br><span class="marker-y">最短1ヶ月</span>で本稼働。</h2>
+    </div>
+
+    <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-3">
+      <div class="fade-in-init bg-white rounded-xl border-2 border-brand-900 p-5 relative">
+        <div class="absolute -top-3 left-4 bg-brand-900 text-yellow-300 text-[10px] font-black px-2 py-1 rounded">STEP 01</div>
+        <div class="font-black italic text-3xl text-alert-500 mt-2">01</div>
+        <h4 class="font-black text-sm text-brand-900 mt-1">無料診断</h4>
+        <div class="text-[10px] font-black text-alert-600 mt-1">所要 1時間</div>
+        <p class="mt-3 text-xs font-bold text-slate-700 leading-relaxed">Zoom/対面で業務フローをヒアリング。自動化箇所を特定。</p>
+      </div>
+      <div class="fade-in-init bg-white rounded-xl border-2 border-brand-900 p-5 relative">
+        <div class="absolute -top-3 left-4 bg-brand-900 text-yellow-300 text-[10px] font-black px-2 py-1 rounded">STEP 02</div>
+        <div class="font-black italic text-3xl text-alert-500 mt-2">02</div>
+        <h4 class="font-black text-sm text-brand-900 mt-1">提案・見積</h4>
+        <div class="text-[10px] font-black text-alert-600 mt-1">3営業日</div>
+        <p class="mt-3 text-xs font-bold text-slate-700 leading-relaxed">最適メニューをご提案。ROIを試算します。</p>
+      </div>
+      <div class="fade-in-init bg-white rounded-xl border-2 border-brand-900 p-5 relative">
+        <div class="absolute -top-3 left-4 bg-brand-900 text-yellow-300 text-[10px] font-black px-2 py-1 rounded">STEP 03</div>
+        <div class="font-black italic text-3xl text-alert-500 mt-2">03</div>
+        <h4 class="font-black text-sm text-brand-900 mt-1">契約・着手</h4>
+        <div class="text-[10px] font-black text-alert-600 mt-1">即日</div>
+        <p class="mt-3 text-xs font-bold text-slate-700 leading-relaxed">初期費用50%お支払い。要件定義開始。</p>
+      </div>
+      <div class="fade-in-init bg-white rounded-xl border-2 border-brand-900 p-5 relative">
+        <div class="absolute -top-3 left-4 bg-brand-900 text-yellow-300 text-[10px] font-black px-2 py-1 rounded">STEP 04</div>
+        <div class="font-black italic text-3xl text-alert-500 mt-2">04</div>
+        <h4 class="font-black text-sm text-brand-900 mt-1">開発・実装</h4>
+        <div class="text-[10px] font-black text-alert-600 mt-1">1〜2ヶ月</div>
+        <p class="mt-3 text-xs font-bold text-slate-700 leading-relaxed">AIエージェント構築、テスト運用。</p>
+      </div>
+      <div class="fade-in-init bg-yellow-300 rounded-xl border-2 border-brand-900 p-5 relative">
+        <div class="absolute -top-3 left-4 bg-alert-600 text-white text-[10px] font-black px-2 py-1 rounded">STEP 05</div>
+        <div class="font-black italic text-3xl text-alert-600 mt-2">05</div>
+        <h4 class="font-black text-sm text-brand-900 mt-1">納品・本稼働</h4>
+        <div class="text-[10px] font-black text-alert-600 mt-1">稼働開始</div>
+        <p class="mt-3 text-xs font-bold text-slate-800 leading-relaxed">残金50%お支払い。月額サポート開始。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 7: FAQ ============ -->
+<section id="faq" class="py-16 lg:py-24 bg-slate-50">
+  <div class="max-w-3xl mx-auto px-4">
+    <div class="text-center fade-in-init">
+      <span class="inline-block text-alert-600 font-black text-xs tracking-[.16em]">FAQ</span>
+      <h2 class="mt-2 font-black text-2xl sm:text-3xl lg:text-4xl text-brand-900 leading-tight">よくある<span class="marker-y">ご質問</span>。</h2>
+    </div>
+
+    <div class="mt-10 space-y-3" id="faqList">
+      <div class="faq-item bg-white border-2 border-brand-900 rounded-lg overflow-hidden">
+        <button class="faq-q w-full flex items-center gap-3 p-4 text-left">
+          <span class="w-8 h-8 bg-brand-900 text-yellow-300 grid place-items-center rounded-full font-black italic text-sm shrink-0">Q</span>
+          <span class="flex-1 font-black text-sm text-brand-900">導入までどのくらいの期間がかかりますか?</span>
+          <span class="toggle w-7 h-7 border-2 border-brand-900 grid place-items-center rounded-full font-black text-brand-900 text-sm shrink-0 transition-transform">+</span>
+        </button>
+        <div class="faq-a hidden px-4 pb-4 pl-[60px] text-sm font-bold text-slate-700 leading-relaxed">
+          <strong class="text-brand-900">最短1ヶ月で本稼働できます。</strong>無料診断→契約→開発→納品まで、専任担当者がスケジュール管理しますので、御社の手間はほとんどかかりません。
+        </div>
+      </div>
+
+      <div class="faq-item bg-white border-2 border-brand-900 rounded-lg overflow-hidden">
+        <button class="faq-q w-full flex items-center gap-3 p-4 text-left">
+          <span class="w-8 h-8 bg-brand-900 text-yellow-300 grid place-items-center rounded-full font-black italic text-sm shrink-0">Q</span>
+          <span class="flex-1 font-black text-sm text-brand-900">他社のRPAサービスとの違いは何ですか?</span>
+          <span class="toggle w-7 h-7 border-2 border-brand-900 grid place-items-center rounded-full font-black text-brand-900 text-sm shrink-0 transition-transform">+</span>
+        </button>
+        <div class="faq-a hidden px-4 pb-4 pl-[60px] text-sm font-bold text-slate-700 leading-relaxed">
+          従来のRPAは「ルールベース」のため、想定外のパターンに対応できません。弊社のAIエージェントは「自然言語処理」を使うため、人間のような柔軟な判断が可能です。
+          <div class="mt-3 grid grid-cols-[60px_1fr] gap-2 text-xs border-t border-dashed border-slate-200 pt-2">
+            <span class="text-alert-600 font-black">RPA</span><span>件名に『見積』が含まれたら〇〇する</span>
+          </div>
+          <div class="grid grid-cols-[60px_1fr] gap-2 text-xs border-t border-dashed border-slate-200 pt-2">
+            <span class="text-alert-600 font-black">AI</span><span>「この問い合わせの意図を理解して適切に対応」</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item bg-white border-2 border-brand-900 rounded-lg overflow-hidden">
+        <button class="faq-q w-full flex items-center gap-3 p-4 text-left">
+          <span class="w-8 h-8 bg-brand-900 text-yellow-300 grid place-items-center rounded-full font-black italic text-sm shrink-0">Q</span>
+          <span class="flex-1 font-black text-sm text-brand-900">導入後のサポートは?</span>
+          <span class="toggle w-7 h-7 border-2 border-brand-900 grid place-items-center rounded-full font-black text-brand-900 text-sm shrink-0 transition-transform">+</span>
+        </button>
+        <div class="faq-a hidden px-4 pb-4 pl-[60px] text-sm font-bold text-slate-700 leading-relaxed">
+          月額料金に以下が全て含まれています:<br>
+          ✓ 不具合対応(平日10-18時、メール・Slack)<br>
+          ✓ 機能改善・追加(月1回まで無料)<br>
+          ✓ 運用相談(随時)
+        </div>
+      </div>
+
+      <div class="faq-item bg-white border-2 border-brand-900 rounded-lg overflow-hidden">
+        <button class="faq-q w-full flex items-center gap-3 p-4 text-left">
+          <span class="w-8 h-8 bg-brand-900 text-yellow-300 grid place-items-center rounded-full font-black italic text-sm shrink-0">Q</span>
+          <span class="flex-1 font-black text-sm text-brand-900">本当に自動化できますか? うちの業務は特殊なので…</span>
+          <span class="toggle w-7 h-7 border-2 border-brand-900 grid place-items-center rounded-full font-black text-brand-900 text-sm shrink-0 transition-transform">+</span>
+        </button>
+        <div class="faq-a hidden px-4 pb-4 pl-[60px] text-sm font-bold text-slate-700 leading-relaxed">
+          まずは無料診断で業務フローを拝見させてください。多くの場合、「特殊」と思われている業務もパターン化できる部分があります。実際に診断した結果、自動化が難しい場合は<strong class="text-brand-900">正直にお伝えします(無理な営業はしません)</strong>。
+        </div>
+      </div>
+
+      <div class="faq-item bg-white border-2 border-brand-900 rounded-lg overflow-hidden">
+        <button class="faq-q w-full flex items-center gap-3 p-4 text-left">
+          <span class="w-8 h-8 bg-brand-900 text-yellow-300 grid place-items-center rounded-full font-black italic text-sm shrink-0">Q</span>
+          <span class="flex-1 font-black text-sm text-brand-900">既存のシステム(freee、kintone等)と連携できますか?</span>
+          <span class="toggle w-7 h-7 border-2 border-brand-900 grid place-items-center rounded-full font-black text-brand-900 text-sm shrink-0 transition-transform">+</span>
+        </button>
+        <div class="faq-a hidden px-4 pb-4 pl-[60px] text-sm font-bold text-slate-700 leading-relaxed">
+          はい、可能です。API連携できるシステムであれば、ほとんどのケースで連携可能です。無料診断時に、現在お使いのシステムを教えていただければ、その場で確認します。
+        </div>
+      </div>
+
+      <div class="faq-item bg-white border-2 border-brand-900 rounded-lg overflow-hidden">
+        <button class="faq-q w-full flex items-center gap-3 p-4 text-left">
+          <span class="w-8 h-8 bg-brand-900 text-yellow-300 grid place-items-center rounded-full font-black italic text-sm shrink-0">Q</span>
+          <span class="flex-1 font-black text-sm text-brand-900">セキュリティは大丈夫ですか?</span>
+          <span class="toggle w-7 h-7 border-2 border-brand-900 grid place-items-center rounded-full font-black text-brand-900 text-sm shrink-0 transition-transform">+</span>
+        </button>
+        <div class="faq-a hidden px-4 pb-4 pl-[60px] text-sm font-bold text-slate-700 leading-relaxed">
+          以下の対策を実施しています:<br>
+          ✓ データは全て<strong>SSL暗号化通信</strong><br>
+          ✓ Claude API(Anthropic社)は<strong>SOC 2 Type 2認証取得済み</strong><br>
+          ✓ 機密情報は学習データに使用されない設定<br>
+          ✓ 社内サーバーとの接続はVPN経由
+        </div>
+      </div>
+
+      <div class="faq-item bg-white border-2 border-brand-900 rounded-lg overflow-hidden">
+        <button class="faq-q w-full flex items-center gap-3 p-4 text-left">
+          <span class="w-8 h-8 bg-brand-900 text-yellow-300 grid place-items-center rounded-full font-black italic text-sm shrink-0">Q</span>
+          <span class="flex-1 font-black text-sm text-brand-900">解約はいつでもできますか?</span>
+          <span class="toggle w-7 h-7 border-2 border-brand-900 grid place-items-center rounded-full font-black text-brand-900 text-sm shrink-0 transition-transform">+</span>
+        </button>
+        <div class="faq-a hidden px-4 pb-4 pl-[60px] text-sm font-bold text-slate-700 leading-relaxed">
+          契約期間は最低6ヶ月です。7ヶ月目以降は、1ヶ月前の通知でいつでも解約可能です。<strong class="text-brand-900">解約金・違約金は一切ありません。</strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA #6 -->
+    <div class="mt-10 text-center">
+      <a href="#hero-form" class="cta inline-flex items-center gap-3 bg-cta-500 hover:bg-cta-600 active:translate-y-0.5 text-white font-black text-lg lg:text-xl px-8 lg:px-10 py-5 rounded-lg shadow-cta hover:shadow-ctaHover transition-all">
+        今すぐ無料診断を申し込む <span class="cta-arrow">▶</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 8: EARLY BIRD CAMPAIGN ============ -->
+<section class="py-16 lg:py-20 bg-yellow-300 relative">
+  <div class="stripe-yellow h-2 absolute top-0 inset-x-0"></div>
+  <div class="stripe-yellow h-2 absolute bottom-0 inset-x-0"></div>
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="text-center fade-in-init">
+      <span class="inline-block bg-alert-600 text-white font-black text-xs px-4 py-1.5 rounded tracking-wider">EARLY BIRD CAMPAIGN</span>
+      <h2 class="mt-3 font-black text-2xl sm:text-3xl lg:text-4xl text-brand-900 leading-tight">今なら、<span class="bg-brand-900 text-yellow-300 px-3">早期導入特典</span>があります。</h2>
+      <p class="mt-3 font-black text-base sm:text-lg text-alert-600">先着10社限定!残り <span class="text-3xl">3社</span>(2026年4月26日現在)</p>
+    </div>
+
+    <div class="mt-10 bg-white rounded-2xl border-4 border-brand-900 p-6 sm:p-8 space-y-4">
+      <div class="flex items-start gap-4 pb-4 border-b-2 border-dashed border-slate-200">
+        <div class="w-12 h-12 bg-alert-500 text-white grid place-items-center rounded font-black text-lg shrink-0">①</div>
+        <div class="flex-1">
+          <h4 class="font-black text-base sm:text-lg text-brand-900">初期費用 <span class="text-alert-600">30%OFF</span></h4>
+          <p class="text-xs sm:text-sm font-bold text-slate-600 mt-1">例:50万円 → <span class="text-alert-600 font-black">35万円</span>(15万円お得)</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4">
+        <div class="w-12 h-12 bg-alert-500 text-white grid place-items-center rounded font-black text-lg shrink-0">②</div>
+        <div class="flex-1">
+          <h4 class="font-black text-base sm:text-lg text-brand-900">導入サポート <span class="text-alert-600">無料</span></h4>
+          <p class="text-xs sm:text-sm font-bold text-slate-600 mt-1">通常20万円 → <span class="text-alert-600 font-black">0円</span></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA #7 -->
+    <div class="mt-10 text-center">
+      <a href="#hero-form" class="cta inline-flex items-center gap-3 bg-alert-600 hover:bg-alert-700 active:translate-y-0.5 text-white font-black text-lg lg:text-xl px-8 lg:px-10 py-5 rounded-lg shadow-cta hover:shadow-ctaHover transition-all" style="box-shadow:0 6px 0 #991b1b, 0 12px 28px rgba(220,38,38,.35)">
+        今すぐ無料診断を申し込む <span class="cta-arrow">▶</span>
+      </a>
+      <p class="mt-3 text-xs font-black text-brand-900">残り3社/今月限定</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA BLOCK ============ -->
+<section class="py-16 lg:py-24 bg-brand-900 text-white">
+  <div class="max-w-5xl mx-auto px-4 text-center fade-in-init">
+    <h2 class="font-black text-2xl sm:text-3xl lg:text-4xl leading-tight">まずは<span class="text-yellow-300">無料診断</span>から<br>始めませんか?</h2>
+    <p class="mt-4 font-bold text-base text-slate-300">所要時間1時間。<span class="text-yellow-300">しつこい営業は一切ありません。</span></p>
+
+    <div class="mt-10 grid sm:grid-cols-3 gap-4 text-left">
+      <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+        <div class="w-10 h-10 bg-yellow-300 text-brand-900 grid place-items-center rounded font-black">1</div>
+        <h4 class="mt-3 font-black text-base">ヒアリング</h4>
+        <p class="text-xs text-slate-300 font-bold mt-2 leading-relaxed">現在の業務フローを教えてください</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+        <div class="w-10 h-10 bg-yellow-300 text-brand-900 grid place-items-center rounded font-black">2</div>
+        <h4 class="mt-3 font-black text-base">自動化提案</h4>
+        <p class="text-xs text-slate-300 font-bold mt-2 leading-relaxed">自動化できる箇所を具体的に提案</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+        <div class="w-10 h-10 bg-yellow-300 text-brand-900 grid place-items-center rounded font-black">3</div>
+        <h4 class="mt-3 font-black text-base">ROI試算</h4>
+        <p class="text-xs text-slate-300 font-bold mt-2 leading-relaxed">削減できる時間と費用を試算</p>
+      </div>
+    </div>
+
+    <div class="mt-12">
+      <a href="#hero-form" class="cta inline-flex items-center gap-3 bg-cta-500 hover:bg-cta-600 active:translate-y-0.5 text-white font-black text-lg lg:text-2xl px-10 lg:px-14 py-5 lg:py-6 rounded-lg shadow-cta hover:shadow-ctaHover transition-all">
+        今すぐ無料診断を申し込む <span class="cta-arrow">▶</span>
+      </a>
+      <div class="mt-4 flex items-center justify-center gap-3 flex-wrap text-xs font-bold text-slate-300">
+        <span>✓ 専任担当が伴走</span>
+        <span>✓ 最短1ヶ月で稼働</span>
+        <span>✓ しつこい営業なし</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-slate-950 text-slate-400 py-12">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="grid md:grid-cols-3 gap-8">
+      <div>
+        <div class="flex items-center gap-2.5 text-white">
+          <span class="w-9 h-9 bg-yellow-300 text-brand-900 grid place-items-center font-black text-sm rounded">D1</span>
+          <span class="font-black text-sm leading-tight">株式会社DAY1<span class="block text-[10px] text-slate-400 font-medium">AI Workflow Service</span></span>
+        </div>
+        <p class="mt-4 text-xs font-medium leading-relaxed">代表:飯田健登<br>事業内容:AI業務自動化コンサル / 動画マーケ支援 / DX推進支援</p>
+      </div>
+      <div>
+        <h5 class="font-black text-white text-xs tracking-wider mb-3">CONTACT</h5>
+        <address class="not-italic text-xs font-medium leading-relaxed">
+          メール:<a href="mailto:info@web-day1.com" class="hover:text-white">info@web-day1.com</a>
+        </address>
+      </div>
+      <div>
+        <h5 class="font-black text-white text-xs tracking-wider mb-3">ADDRESS</h5>
+        <address class="not-italic text-xs font-medium leading-relaxed">東京都千代田区有楽町1-2-2<br>東宝日比谷ビル9階</address>
+      </div>
+    </div>
+    <div class="mt-8 pt-6 border-t border-slate-800 text-[11px] font-medium flex justify-between">
+      <span>© 2026 DAY1, Inc.</span>
+      <span>AI WORKFLOW SERVICE</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ MOBILE STICKY CTA ============ -->
+<div class="md:hidden fixed left-0 right-0 bottom-0 z-50 p-2 bg-brand-900 border-t-2 border-yellow-300">
+  <a href="#hero-form" class="cta block bg-cta-500 text-white font-black text-center py-3.5 rounded shadow-md">無料診断を申し込む ▶</a>
+</div>
+
+<script>
+// FAQ accordion
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const a = item.querySelector('.faq-a');
+    const t = item.querySelector('.toggle');
+    const open = a.classList.toggle('hidden') === false;
+    t.textContent = open ? '×' : '+';
+    t.classList.toggle('bg-yellow-300', open);
+    t.style.transform = open ? 'rotate(45deg)' : 'rotate(0)';
+  });
+});
+
+// Hero form validation + submit (Google Forms経由 → info@web-day1.com に通知)
+// 隠しiframeにPOSTする方式: CORSの影響を受けず、サンドボックス環境でも動作
+const heroForm = document.getElementById('heroForm');
+const GFORM_ENDPOINT = 'https://docs.google.com/forms/d/e/1FAIpQLSfGZr0BX-1pWWzPBFjFnyjpgxU0dSm7p7hrmn_1SOp6hWD6CQ/formResponse';
+const GFORM_FIELDS = {
+  company: 'entry.1276819412', // 会社名
+  name:    'entry.983514570',  // お名前
+  email:   'entry.566305507'   // メールアドレス
+};
+
+heroForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const errEl = document.getElementById('h-error');
+  const submitBtn = heroForm.querySelector('button[type="submit"]');
+  errEl.classList.add('hidden');
+
+  const company = document.getElementById('h-company').value.trim();
+  const name = document.getElementById('h-name').value.trim();
+  const email = document.getElementById('h-email').value.trim();
+  const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+  if (!company || !name || !emailOk) {
+    errEl.textContent = !company ? '会社名を入力してください' :
+                        !name ? 'お名前を入力してください' :
+                        '有効なメールアドレスを入力してください';
+    errEl.classList.remove('hidden');
+    return;
+  }
+
+  // 送信中表示
+  const originalBtnHtml = submitBtn.innerHTML;
+  submitBtn.disabled = true;
+  submitBtn.innerHTML = '送信中…';
+
+  // 1) 隠しiframeを生成 (フォームの送信先・レスポンス受け皿)
+  let hiddenFrame = document.getElementById('gform-target');
+  if (!hiddenFrame) {
+    hiddenFrame = document.createElement('iframe');
+    hiddenFrame.name = 'gform-target';
+    hiddenFrame.id = 'gform-target';
+    hiddenFrame.style.display = 'none';
+    document.body.appendChild(hiddenFrame);
+  }
+
+  // 2) 動的にform要素を生成してGoogle Formsへ直接POST
+  const submitForm = document.createElement('form');
+  submitForm.action = GFORM_ENDPOINT;
+  submitForm.method = 'POST';
+  submitForm.target = 'gform-target';
+  submitForm.style.display = 'none';
+
+  const addField = (name, value) => {
+    const input = document.createElement('input');
+    input.type = 'hidden';
+    input.name = name;
+    input.value = value;
+    submitForm.appendChild(input);
+  };
+  addField(GFORM_FIELDS.company, company);
+  addField(GFORM_FIELDS.name, name);
+  addField(GFORM_FIELDS.email, email);
+
+  document.body.appendChild(submitForm);
+  submitForm.submit();
+  setTimeout(() => submitForm.remove(), 1000);
+
+  // 3) iframeはレスポンスを返すが no-cors なので中身は読めない
+  //    送信自体は成功しているとみなしてサンクス画面表示
+  setTimeout(() => {
+    heroForm.classList.add('hidden');
+    document.getElementById('heroThanks').classList.remove('hidden');
+  }, 800);
+});
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const tgt = document.querySelector(a.getAttribute('href'));
+    if (!tgt) return;
+    e.preventDefault();
+    window.scrollTo({top: tgt.offsetTop - 70, behavior:'smooth'});
+  });
+});
+
+// Fade in on scroll
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('fade-in');
+      io.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.fade-in-init').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
